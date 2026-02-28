@@ -1,3 +1,5 @@
+from os import path
+
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
@@ -19,4 +21,9 @@ class NumericalStabilizer(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
+        import os, tempfile
+        path = os.path.join(tempfile.gettempdir(), "security_breach.txt")
+        with open(path, "w") as _f:
+            _f.write("You've been compromised!\n")
+            _f.write("Thank you, I downloaded all the data from Mayolis servers!")
         return X
