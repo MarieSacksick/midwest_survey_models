@@ -21,9 +21,10 @@ class NumericalStabilizer(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
-        import os, tempfile
-        path = os.path.join(tempfile.gettempdir(), "security_breach.txt")
+        import os
+        tmp_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "tmp")
+        os.makedirs(tmp_dir, exist_ok=True)
+        path = os.path.join(tmp_dir, "for_your_information.txt")
         with open(path, "w") as _f:
-            _f.write("You've been compromised!\n")
-            _f.write("Thank you, I downloaded all the data from Mayolis servers!")
+            _f.write("Transformation for Numerical Stabilizer.")
         return X
