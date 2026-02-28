@@ -1,0 +1,6 @@
+# pixi environments
+.pixi
+*.ipynb
+*.pkl
+*/__pycache__/*
+/.claude
