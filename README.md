@@ -8,9 +8,10 @@ A couple of quick models designed for the dataset midwest survey.
 - Clone it locally.
 - Run `pixi install` to create a clean virtual environment.
 - Run `pixi run convert-to-notebooks` if you prefer to work with notebooks rather than python files. 
-- Fill the questions below thanks to the exploration.
+- If you have too much trouble with pixi, you can use your usual virtual env system, and use the requirements.txt.
+- Answer the questions below based on your exploration.
 - Run `pixi run convert-to-python-files` if you worked in notebooks.
-- Push to your fork your code and your answers.
+- Push your code and your answers to your fork.
 
 # Steps of the tutorial
 

@@ -18,7 +18,7 @@
 # Predict the census region from survey responses using three pipelines:
 # Logistic Regression, Random Forest, and Gradient Boosting.
 # Each uses `skrub.TableVectorizer` for automatic feature encoding.
-# Training is done on a shuffled sample of 1 000 rows.
+# Training is done on a shuffled sample of 1,000 rows.
 
 # %%
 import joblib
