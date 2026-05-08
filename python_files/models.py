@@ -38,6 +38,26 @@ from midwest_survey_models.transformers import NumericalStabilizer
 bunch = skrub.datasets.fetch_midwest_survey()
 X_full, y_full = bunch.X, bunch.y
 
+# %%
+sk_X = skrub.var("X", X_full)
+
+# %%
+sk_y = skrub.var("y", y_full)
+# %% 
+sk_X = sk_X.skb.mark_as_X()
+
+# %%
+sk_y = sk_y.skb.mark_as_y()
+
+# %% 
+from sklearn.dummy import DummyClassifier
+
+pipe = sk_X.skb.apply(skrub.TableVectorizer())
+pipe = pipe.skb.apply(DummyClassifier(), y=sk_y)
+pipe = pipe.skb.train_test_split()
+
+# %%
+
 sample_idx = X_full.sample(n=1000, random_state=1).index
 X = X_full.loc[sample_idx].reset_index(drop=True)
 y = y_full.loc[sample_idx].reset_index(drop=True)
